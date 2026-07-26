@@ -363,3 +363,45 @@ footer {
         height: 200px;
     }
 }
+
+/* Experience sections */
+.experience-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    padding:1.8rem;
+
+    margin-bottom:1.5rem;
+
+    box-shadow:var(--card-shadow);
+}
+
+.experience-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+
+    gap:1rem;
+}
+
+.experience-header h2{
+    margin:0;
+    font-size:1.4rem;
+}
+
+.experience-date{
+    color:var(--accent);
+    font-size:.85rem;
+    font-weight:600;
+}
+
+.experience-card h3{
+    margin-top:.4rem;
+    color:#666;
+    font-size:1rem;
+}
+
+.experience-card ul{
+    margin-top:1rem;
+}
