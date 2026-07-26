@@ -39,6 +39,16 @@ body {
     line-height: 1.7;
 }
 
+main.container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+main > section {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 a {
     color: var(--accent-dark);
 }
@@ -203,6 +213,18 @@ a:hover {
     color: #84939a !important;
     font-size: 0.8rem !important;
     line-height: 1.6;
+}
+
+.education-list {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
+.education-list li {
+    margin-bottom: 0.35rem;
 }
 
 .school-photo{
