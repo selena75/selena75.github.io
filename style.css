@@ -405,3 +405,31 @@ footer {
 .experience-card ul{
     margin-top:1rem;
 }
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    margin-top: 3rem;
+}
+
+.page-navigation [role="button"] {
+    width: auto;
+    padding: 0.7rem 1.4rem;
+
+    border-radius: 999px;
+
+    color: var(--accent-dark);
+    background: transparent;
+    border: 1px solid var(--accent);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: 0.25s;
+}
+
+.page-navigation [role="button"]:hover {
+    background: var(--accent);
+    color: white;
+}
