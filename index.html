@@ -21,137 +21,19 @@
         href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     >
 
-    <style>
-        body {
-            background: #f7f9fc;
-        }
-
-        header {
-            padding-top: 2rem;
-            padding-bottom: 1rem;
-        }
-
-        nav strong {
-            font-size: 1rem;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            align-items: center;
-            gap: 2rem;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-        }
-
-        .hero h1 {
-            margin-bottom: 0.5rem;
-            font-size: clamp(2.8rem, 7vw, 5rem);
-        }
-
-        .subtitle {
-            margin-bottom: 1.5rem;
-            color: #0da5bd;
-            font-weight: 700;
-        }
-
-        .introduction {
-            max-width: 680px;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        .profile-photo {
-            width: 100%;
-            max-width: 360px;
-            aspect-ratio: 4 / 5;
-            object-fit: cover;
-            border-radius: 24px;
-            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
-        }
-
-        .photo-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-
-        section {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-
-        .section-title {
-            margin-bottom: 2rem;
-        }
-
-        .education-card {
-            padding: 2rem;
-        }
-
-        .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-        }
-
-        .skill-card {
-            padding: 1.5rem;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 0.35rem 0.75rem;
-            color: #0da5bd;
-            background: #0da5bd;
-            border-radius: 999px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-            text-align: center;
-        }
-
-        @media (max-width: 800px) {
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .photo-wrapper {
-                justify-content: flex-start;
-            }
-
-            .profile-photo {
-                max-width: 300px;
-            }
-
-            .skill-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="container">
+    <header class="container site-header">
         <nav>
             <ul>
                 <li>
-                    <strong>Selena Lin</strong>
+                    <a class="site-name" href="index.html">
+                        Selena Lin
+                    </a>
                 </li>
             </ul>
 
@@ -193,8 +75,8 @@
         <!-- Introduction -->
         <section class="hero">
 
-            <div>
-                <p class="subtitle">
+            <div class="hero-content">
+                <p class="eyebrow">
                     Electrical Engineering · Robotics · Automation
                 </p>
 
@@ -204,13 +86,13 @@
                     I am an Electrical Engineering student at Georgia Tech
                     with a concentration in Robotics and Electronic Devices
                     and a minor in Industrial Design. I enjoy building systems
-                    that combine hardware, software, sensing, and intelligent
-                    automation. My interests include robotics, embedded
-                    systems, machine vision, control systems, FPGA design,
-                    and hardware-software integration.
+                    that combine hardware, software, sensing, and automation.
+                    My interests include robotics, embedded systems, machine
+                    vision, control systems, FPGA design, and
+                    hardware-software integration.
                 </p>
 
-                <div role="group">
+                <div class="button-group">
                     <a href="projects.html" role="button">
                         View Projects
                     </a>
@@ -218,15 +100,14 @@
                     <a
                         href="experience.html"
                         role="button"
-                        class="secondary"
+                        class="outline"
                     >
                         View Experience
                     </a>
                 </div>
             </div>
 
-
-            <div class="photo-wrapper">
+            <div class="profile-wrapper">
                 <img
                     class="profile-photo"
                     src="images/profile.png"
@@ -238,40 +119,55 @@
 
 
         <!-- Education -->
-        <section>
-            <div class="section-title">
-                <p class="subtitle">Education</p>
+        <section class="page-section">
+
+            <div class="section-heading">
+                <p class="eyebrow">Education</p>
                 <h2>Georgia Institute of Technology</h2>
             </div>
 
             <article class="education-card">
-                <h3>Bachelor of Science in Electrical Engineering</h3>
 
-                <p>
-                    Concentration in Robotics and Electronic Devices
-                    <br>
-                    Minor in Industrial Design
-                </p>
+                <div class="education-content">
+                    <h3>
+                        Bachelor of Science in Electrical Engineering
+                    </h3>
 
-                <p>
-                    Expected graduation: May 2027
-                    <br>
-                    GPA: 3.65
-                </p>
+                    <p>
+                        Concentration in Robotics and Electronic Devices
+                        <br>
+                        Minor in Industrial Design
+                    </p>
 
-                <p>
-                    I am also involved with RoboJackets RoboCup as an
-                    Electrical Lead and the Chinese Student Association.
-                </p>
+                    <p class="education-details">
+                        Expected Graduation · May 2027
+                        <br>
+                        GPA · 3.65
+                    </p>
+
+                    <p>
+                        Electrical Lead for RoboCup RoboJackets and a member
+                        of the Chinese Student Association.
+                    </p>
+                </div>
+
+                <img
+                    class="school-photo"
+                    src="images/georgia-tech.jpg"
+                    alt="Georgia Institute of Technology campus"
+                >
+
             </article>
+
         </section>
 
 
         <!-- Skills -->
-        <section>
-            <div class="section-title">
-                <p class="subtitle">Technical Skills</p>
-                <h2>What I work with</h2>
+        <section class="page-section">
+
+            <div class="section-heading">
+                <p class="eyebrow">Technical Skills</p>
+                <h2>Tools I work with</h2>
             </div>
 
             <div class="skill-grid">
@@ -326,6 +222,7 @@
                 </article>
 
             </div>
+
         </section>
 
     </main>
@@ -334,7 +231,13 @@
     <footer class="container">
         <small>
             © <span id="current-year"></span> Selena Lin ·
-            <a href="mailto:qingyanlin75@gmail.com">Email</a> ·
+
+            <a href="mailto:qingyanlin75@gmail.com">
+                Email
+            </a>
+
+            ·
+
             <a
                 href="https://www.linkedin.com/in/selena-qingyan-lin/"
                 target="_blank"
@@ -347,8 +250,11 @@
 
 
     <script>
-        document.getElementById("current-year").textContent =
-            new Date().getFullYear();
+        const year = document.getElementById("current-year");
+
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
     </script>
 
 </body>
