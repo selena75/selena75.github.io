@@ -472,6 +472,11 @@ footer {
     padding: 0.4rem;
 
     overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
 
     background: var(--surface);
     border: 1px solid var(--border);
@@ -480,6 +485,8 @@ footer {
 }
 
 .project-tab {
+    flex: 0 0 auto;
+
     width: auto;
     min-width: max-content;
     margin: 0;
