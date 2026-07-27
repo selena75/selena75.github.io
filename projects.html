@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Engineering projects by Selena Lin."
+    >
+
+    <title>Projects | Selena Lin</title>
+
+    <!-- Pico CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+
+    <!-- Main website navigation -->
+    <header class="container site-header">
+
+        <nav>
+            <ul>
+                <li>
+                    <a class="site-name" href="index.html">
+                        Selena Lin
+                    </a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="experience.html">
+                        Experience
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Resume
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://github.com/selena75"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.linkedin.com/in/selena-qingyan-lin/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <main class="container projects-page">
+
+        <!-- Page title -->
+        <section class="projects-intro">
+
+            <p class="eyebrow">
+                Selected Work
+            </p>
+
+            <h1>Engineering Projects</h1>
+
+            <p>
+                Explore my projects using the navigation bar or arrows.
+            </p>
+
+        </section>
+
+
+        <!-- Project-name navigation bar -->
+        <nav
+            class="project-tabs"
+            aria-label="Project navigation"
+        >
+
+            <button
+                class="project-tab active"
+                type="button"
+                data-project="0"
+            >
+                Machine Vision
+            </button>
+
+            <button
+                class="project-tab"
+                type="button"
+                data-project="1"
+            >
+                RoboCup
+            </button>
+
+            <button
+                class="project-tab"
+                type="button"
+                data-project="2"
+            >
+                FPGA Controller
+            </button>
+
+            <button
+                class="project-tab"
+                type="button"
+                data-project="3"
+            >
+                Breakout Game
+            </button>
+
+        </nav>
+
+
+        <!-- Project carousel -->
+        <section class="project-carousel">
+
+            <!-- Previous project arrow -->
+            <button
+                class="project-arrow project-arrow-left"
+                id="previous-project"
+                type="button"
+                aria-label="View previous project"
+            >
+                &#8592;
+            </button>
+
+
+            <div class="project-slides">
+
+                <!-- Project 1 -->
+                <article
+                    class="project-slide active"
+                    data-index="0"
+                >
+
+                    <div class="project-content">
+
+                        <div class="project-number">
+                            Project 01
+                        </div>
+
+                        <h2>
+                            Automated Machine Vision Inspection System
+                        </h2>
+
+                        <p class="project-subtitle">
+                            HSM Solutions · Automation and Machine Vision Internship
+                        </p>
+
+                        <p class="project-description">
+                            Developed a three-dimensional machine vision
+                            inspection system for truck handrail components.
+                            The system combined laser scanning, servo-driven
+                            motion, encoder triggering, and automated
+                            dimensional measurement.
+                        </p>
+
+                        <div class="project-details-grid">
+
+                            <div>
+                                <h3>My Role</h3>
+
+                                <ul>
+                                    <li>
+                                        Designed the inspection workflow in
+                                        LMI GoPxL.
+                                    </li>
+
+                                    <li>
+                                        Integrated the Gocator 2670 scanner,
+                                        encoder, servo drive, and linear slide.
+                                    </li>
+
+                                    <li>
+                                        Designed the electrical control panel
+                                        and system wiring.
+                                    </li>
+
+                                    <li>
+                                        Evaluated measurement repeatability
+                                        and inspection tolerances.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Measurements</h3>
+
+                                <ul>
+                                    <li>Hole diameter</li>
+                                    <li>Hole position</li>
+                                    <li>Part dimensions</li>
+                                    <li>Plane and bend angles</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="project-tags">
+                            <span>LMI Gocator</span>
+                            <span>GoPxL</span>
+                            <span>Machine Vision</span>
+                            <span>Servo Control</span>
+                            <span>Encoder Integration</span>
+                            <span>AutoCAD</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-media">
+
+                        <img
+                            src="images/machine-vision.jpg"
+                            alt="Automated machine vision inspection system"
+                        >
+
+                        <p class="image-caption">
+                            Upload an inspection-cell or scanner image as
+                            <strong>images/machine-vision.jpg</strong>.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 2 -->
+                <article
+                    class="project-slide"
+                    data-index="1"
+                    hidden
+                >
+
+                    <div class="project-content">
+
+                        <div class="project-number">
+                            Project 02
+                        </div>
+
+                        <h2>
+                            RoboCup Autonomous Soccer Robot Electrical System
+                        </h2>
+
+                        <p class="project-subtitle">
+                            Georgia Tech RoboJackets · Electrical Lead
+                        </p>
+
+                        <p class="project-description">
+                            Led electrical development for an autonomous
+                            robotic soccer platform, working across PCB
+                            design, embedded hardware, communication systems,
+                            and full-robot integration.
+                        </p>
+
+                        <div class="project-details-grid">
+
+                            <div>
+                                <h3>My Contributions</h3>
+
+                                <ul>
+                                    <li>
+                                        Led electrical design and integration
+                                        for the robot platform.
+                                    </li>
+
+                                    <li>
+                                        Developed and tested PCB systems.
+                                    </li>
+
+                                    <li>
+                                        Improved communication using the
+                                        nRF24L01 radio module.
+                                    </li>
+
+                                    <li>
+                                        Coordinated with mechanical and
+                                        software subteams.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Focus Areas</h3>
+
+                                <ul>
+                                    <li>Embedded systems</li>
+                                    <li>PCB design</li>
+                                    <li>Wireless communication</li>
+                                    <li>Hardware debugging</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="project-tags">
+                            <span>C++</span>
+                            <span>KiCad</span>
+                            <span>PCB Design</span>
+                            <span>nRF24L01</span>
+                            <span>Embedded Systems</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-media">
+
+                        <img
+                            src="images/robocup.jpg"
+                            alt="RoboCup autonomous soccer robot"
+                        >
+
+                        <p class="image-caption">
+                            Upload your robot image as
+                            <strong>images/robocup.jpg</strong>.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 3 -->
+                <article
+                    class="project-slide"
+                    data-index="2"
+                    hidden
+                >
+
+                    <div class="project-content">
+
+                        <div class="project-number">
+                            Project 03
+                        </div>
+
+                        <h2>
+                            FPGA-Based LED Controller
+                        </h2>
+
+                        <p class="project-subtitle">
+                            Digital Design Project
+                        </p>
+
+                        <p class="project-description">
+                            Designed a digital LED control system using VHDL
+                            and FPGA hardware. The project applied finite-state
+                            machines, counters, clock division, and hardware
+                            verification.
+                        </p>
+
+                        <div class="project-details-grid">
+
+                            <div>
+                                <h3>My Contributions</h3>
+
+                                <ul>
+                                    <li>
+                                        Designed the control logic using VHDL.
+                                    </li>
+
+                                    <li>
+                                        Implemented timing and state-machine
+                                        behavior.
+                                    </li>
+
+                                    <li>
+                                        Simulated and tested the design before
+                                        programming the FPGA.
+                                    </li>
+
+                                    <li>
+                                        Debugged hardware behavior using
+                                        measured output signals.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Concepts</h3>
+
+                                <ul>
+                                    <li>Finite-state machines</li>
+                                    <li>Clock division</li>
+                                    <li>Digital timing</li>
+                                    <li>FPGA verification</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="project-tags">
+                            <span>VHDL</span>
+                            <span>FPGA</span>
+                            <span>Quartus</span>
+                            <span>Digital Logic</span>
+                            <span>State Machines</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-media">
+
+                        <img
+                            src="images/fpga-led.jpg"
+                            alt="FPGA LED controller project"
+                        >
+
+                        <p class="image-caption">
+                            Upload your FPGA image as
+                            <strong>images/fpga-led.jpg</strong>.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project 4 -->
+                <article
+                    class="project-slide"
+                    data-index="3"
+                    hidden
+                >
+
+                    <div class="project-content">
+
+                        <div class="project-number">
+                            Project 04
+                        </div>
+
+                        <h2>
+                            Embedded Breakout Game
+                        </h2>
+
+                        <p class="project-subtitle">
+                            Mbed Microcontroller Project
+                        </p>
+
+                        <p class="project-description">
+                            Developed an embedded version of the Breakout game
+                            using an Mbed microcontroller, physical controls,
+                            display graphics, and real-time game logic.
+                        </p>
+
+                        <div class="project-details-grid">
+
+                            <div>
+                                <h3>My Contributions</h3>
+
+                                <ul>
+                                    <li>
+                                        Developed game logic and collision
+                                        detection.
+                                    </li>
+
+                                    <li>
+                                        Integrated user inputs with real-time
+                                        display updates.
+                                    </li>
+
+                                    <li>
+                                        Implemented ball, paddle, and block
+                                        behavior.
+                                    </li>
+
+                                    <li>
+                                        Tested and debugged the complete
+                                        embedded system.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h3>Concepts</h3>
+
+                                <ul>
+                                    <li>Real-time programming</li>
+                                    <li>Input handling</li>
+                                    <li>Graphics</li>
+                                    <li>Collision detection</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="project-tags">
+                            <span>C++</span>
+                            <span>Mbed</span>
+                            <span>Embedded Systems</span>
+                            <span>Game Logic</span>
+                            <span>Hardware Integration</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-media">
+
+                        <img
+                            src="images/breakout-game.jpg"
+                            alt="Embedded Breakout game"
+                        >
+
+                        <p class="image-caption">
+                            Upload your game image as
+                            <strong>images/breakout-game.jpg</strong>.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- Next project arrow -->
+            <button
+                class="project-arrow project-arrow-right"
+                id="next-project"
+                type="button"
+                aria-label="View next project"
+            >
+                &#8594;
+            </button>
+
+        </section>
+
+
+        <!-- Project position indicator -->
+        <div class="project-position">
+
+            <span id="current-project-number">
+                01
+            </span>
+
+            <span class="position-line"></span>
+
+            <span>
+                04
+            </span>
+
+        </div>
+
+
+        <!-- Bottom navigation -->
+        <div class="page-navigation">
+
+            <a
+                href="experience.html"
+                role="button"
+                class="outline"
+            >
+                ← Experience
+            </a>
+
+            <a
+                href="index.html"
+                role="button"
+                class="outline"
+            >
+                Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer class="container">
+
+        <small>
+            © <span id="current-year"></span> Selena Lin
+        </small>
+
+    </footer>
+
+
+    <script>
+        const slides = Array.from(
+            document.querySelectorAll(".project-slide")
+        );
+
+        const tabs = Array.from(
+            document.querySelectorAll(".project-tab")
+        );
+
+        const previousButton =
+            document.getElementById("previous-project");
+
+        const nextButton =
+            document.getElementById("next-project");
+
+        const projectNumber =
+            document.getElementById("current-project-number");
+
+        let currentProject = 0;
+
+
+        function showProject(index) {
+            currentProject =
+                (index + slides.length) % slides.length;
+
+            slides.forEach((slide, slideIndex) => {
+                const isActive = slideIndex === currentProject;
+
+                slide.classList.toggle("active", isActive);
+                slide.hidden = !isActive;
+            });
+
+            tabs.forEach((tab, tabIndex) => {
+                const isActive = tabIndex === currentProject;
+
+                tab.classList.toggle("active", isActive);
+
+                tab.setAttribute(
+                    "aria-selected",
+                    String(isActive)
+                );
+            });
+
+            projectNumber.textContent =
+                String(currentProject + 1).padStart(2, "0");
+
+            const activeSlide = slides[currentProject];
+
+            const projectId =
+                activeSlide
+                    .querySelector("h2")
+                    .textContent
+                    .trim()
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/^-|-$/g, "");
+
+            window.history.replaceState(
+                null,
+                "",
+                `#${projectId}`
+            );
+        }
+
+
+        previousButton.addEventListener("click", () => {
+            showProject(currentProject - 1);
+        });
+
+
+        nextButton.addEventListener("click", () => {
+            showProject(currentProject + 1);
+        });
+
+
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                showProject(Number(tab.dataset.project));
+            });
+        });
+
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "ArrowLeft") {
+                showProject(currentProject - 1);
+            }
+
+            if (event.key === "ArrowRight") {
+                showProject(currentProject + 1);
+            }
+        });
+
+
+        const year =
+            document.getElementById("current-year");
+
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
+
+
+        showProject(0);
+    </script>
+
+</body>
+</html>
