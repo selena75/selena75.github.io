@@ -108,44 +108,44 @@
 
         <!-- Project-name navigation bar -->
         <button
-    class="project-tab active"
-    type="button"
-    data-project="0"
->
-    Machine Vision
-</button>
-
-<button
-    class="project-tab"
-    type="button"
-    data-project="1"
->
-    RoboCup
-</button>
-
-<button
-    class="project-tab"
-    type="button"
-    data-project="2"
->
-    ESP32 Cart
-</button>
-
-<button
-    class="project-tab"
-    type="button"
-    data-project="3"
->
-    FPGA Controller
-</button>
-
-<button
-    class="project-tab"
-    type="button"
-    data-project="4"
->
-    Breakout Game
-</button>
+            class="project-tab active"
+            type="button"
+            data-project="0"
+        >
+            Machine Vision
+        </button>
+        
+        <button
+            class="project-tab"
+            type="button"
+            data-project="1"
+        >
+            RoboCup
+        </button>
+        
+        <button
+            class="project-tab"
+            type="button"
+            data-project="2"
+        >
+            ESP32 Cart
+        </button>
+        
+        <button
+            class="project-tab"
+            type="button"
+            data-project="3"
+        >
+            FPGA Controller
+        </button>
+        
+        <button
+            class="project-tab"
+            type="button"
+            data-project="4"
+        >
+            Breakout Game
+        </button>
 
 
 
@@ -358,7 +358,209 @@
 
                 </article>
 
+<!-- Project 3 -->
+<article
+    class="project-slide"
+    data-index="2"
+    hidden
+>
 
+    <div class="project-content">
+
+        <div class="project-number">
+            Project 03
+        </div>
+
+        <h2>
+            Autonomous Web-Controlled Cart
+        </h2>
+
+        <p class="project-subtitle">
+            Moet Thu, Qingyan Lin
+        </p>
+
+        <h3>Project Overview</h3>
+
+        <p>
+            The initial project idea was to design a follow-me cooler that would pair via Bluetooth with a user's smartphone, find its way to them using GPS and a compass, and deliver music via a Bluetooth speaker. However, based on available resources and a complexity analysis, the project was changed to a web-controlled cart. The cart no longer has the following GPS and compass functionality. Instead, it is connected to the web via its own access point, and the user can control it by pressing directional keys on a web page on the computer/phone, which then accesses the ESP32-C6 via a browser.
+        </p>
+
+        <p>
+            In the system, there are two ESP32-C6 boards that communicate using wired UART communication protocol. ESP32 #1 board controls the Wi-Fi module, motors, speed calculation using the IMU module, and audio playback using the speaker. ESP32 #2 takes instructions from ESP32 #1 and controls two OLED displays that function as indicators for turning and braking operations.
+        </p>
+
+
+        <!-- CART PHOTO 1 -->
+        <div class="project-media-placeholder">
+            <p>Cart Photo 1</p>
+        </div>
+
+        <!-- CART PHOTO 2 -->
+        <div class="project-media-placeholder">
+            <p>Cart Photo 2</p>
+        </div>
+
+
+        <h3>Planned vs. Actual Implementation</h3>
+
+        <p>
+            <strong>Components included in proposal, but not implemented in project:</strong>
+        </p>
+
+        <ul>
+            <li>
+                <strong>GPS Module:</strong>
+                Was originally intended to get live GPS coordinates from the user's phone using Bluetooth and follow autonomously. Not used due to use of web-based directional controls.
+            </li>
+
+            <li>
+                <strong>HMC5883L Compass:</strong>
+                Was originally intended to give data via I2C to tell the cooler what direction it is facing. No longer used after removal of GPS module.
+            </li>
+
+            <li>
+                <strong>Bluetooth Speaker:</strong>
+                Was originally intended to play songs while the robot follows you. Replaced by a basic speaker that plays sounds when activated via web UI.
+            </li>
+
+            <li>
+                <strong>Servo (Analog Output):</strong>
+                Was originally included in the proposal for the lid of the cooler. No longer required after turning the project into a cart platform.
+            </li>
+
+            <li>
+                <strong>ON/OFF Switch (Digital Input):</strong>
+                Was originally intended to switch on the ability to follow autonomously. Replaced by an ON/OFF switch on the website.
+            </li>
+
+            <li>
+                <strong>Speedometer (uLCD):</strong>
+                Was originally going to be used to show IMU Velocity of robot. Not required anymore due to boot delay time in OLED.
+            </li>
+        </ul>
+
+
+        <h3>Components and Their Roles</h3>
+
+        <h4>ESP32-C6 #1 – Main Controller</h4>
+
+        <p>
+            Generates a WiFi hotspot and delivers a basic HTTP web page featuring directionally oriented buttons and an ON/OFF button. In case of pressing the buttons, fetch() calls are made to the ESP32 responsible for moving the motors and sending instructions to ESP32 #2 via UART. The IMU is also monitored, and the speaker sounds are played when power is turned on and off.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Motor Driver (TB6612FNG)</strong> - Receives control input signals from ESP32 #1 and delivers the greater current requirement of the 12V DC motors. Selected over the L298N because of higher efficiency and reduced voltage drop. It was also available in the lab room.
+            </li>
+
+            <li>
+                <strong>IMU Module (ICM-20948)</strong> - Uses I2C protocol to interface with ESP32 #1. The z-axis accelerometer value is processed by applying a gravity offset correction factor and exponential decay to determine the speed of the cart. The speed information is transmitted to ESP32 #2 every 500ms through UART.
+            </li>
+
+            <li>
+                <strong>Breadboard Speaker</strong> - Connected to a PWM GPIO on ESP32 #1 using ledcWriteTone(). Plays a four-tone rising chime when the cart is turned on and a falling chime when turned off.
+            </li>
+        </ul>
+
+
+        <h4>ESP32-C6 #2 – Display Controller</h4>
+
+        <p>
+            Receives UART instructions from ESP32 #1 and controls two OLED displays through the following logic:
+        </p>
+
+        <ul>
+            <li>LEFT: blinking of the left screen</li>
+            <li>RIGHT: blinking of the right screen</li>
+            <li>STOP: blinking of the left and right screens</li>
+        </ul>
+
+        <ul>
+            <li>
+                <strong>Dual OLED (SSD1306)</strong> - Attached to both sides of the cart and connected to ESP32 #2 using the I2C protocol (I2C addresses 0x3C and 0x3D). Used as turn indicators and brake lights by displaying animated text through the U8g2 library.
+            </li>
+        </ul>
+
+
+        <h3>Features Included</h3>
+
+        <p>
+            Below are the features we decided to include in our project:
+        </p>
+
+        <ul>
+            <li>Using a new part not covered in the labs (I2C OLED)</li>
+            <li>Digital Output (motor, motor driver)</li>
+            <li>Wired ESP32 Communication</li>
+            <li>PWM Output or Analog Output (Motor, mortar driver)</li>
+            <li>Serial Communication (UART between 2 ESP32s)</li>
+            <li>Bluetooth/Wi-Fi (esp32 and phone)</li>
+            <li>I2C Communication (IUM, OLED screen)</li>
+            <li>Fully Battery Powered (4.5V and 12V)</li>
+        </ul>
+
+
+        <h3>Circuit Diagram</h3>
+
+        <!-- CIRCUIT DIAGRAM -->
+        <div class="project-media-placeholder">
+            <p>Circuit Diagram</p>
+        </div>
+
+
+        <h3>Project Demo</h3>
+
+        <!-- VIDEO -->
+        <div class="project-video-placeholder">
+            <p>Project Demo Video</p>
+        </div>
+
+
+        <h3>Problems Encountered</h3>
+
+        <p>
+            We 3D-printed a hub adapter to connect the DC motor shafts to the cart wheels. Unfortunately, the first adapter had to be broken after the cart crashed into a chair. However, further adapters were made from resins that proved to be much stronger. The motor's direction towards forward, backward, left, and right directions was incorrectly determined based on how the motors' wires were connected. Solved by checking the motor direction flags in setMotorA() and setMotorB(). Since both the uLCD and UART to ESP32 #1 needed Serial1, this problem was resolved by using UART and another HardwareSerial on other GPIO pins. The problem with non-working OLED displays was that 5 seconds were needed for the uLCD to boot up, and removing the uLCD from the program solved the issue.
+        </p>
+
+
+        <h3>Comparison to Real-World Embedded Systems</h3>
+
+        <p>
+            In terms of product design, our plan is to create a robot similar to Hackster.io's follow-me cooler, but their project works with Arduino UNO and a Bluetooth chip in addition to its GPS. We used a Wi-Fi-based browsing system rather than a GPS tracking system because our robot can be operated on any device without having to attach a remote controller.
+        </p>
+
+
+        <h3>Future Improvements</h3>
+
+        <p>
+            A voltage reading from a resistor divider on the battery to the ADC pin will help the website issue a warning when power is running low. Printing all structural parts in resin or PETG will ensure they can withstand continuous motor loads. Connecting Bluetooth audio will make it possible to listen to music.
+        </p>
+
+
+        <h3>External Library Used</h3>
+
+        <p>
+            u8g2 - library for I2C screens
+        </p>
+
+        <p>
+            Other libraries used in this projects were already included from previous labs from class.
+        </p>
+
+        <div class="project-tags">
+            <span>ESP32-C6</span>
+            <span>C++</span>
+            <span>UART</span>
+            <span>I2C</span>
+            <span>PWM</span>
+            <span>Wi-Fi</span>
+            <span>Embedded Systems</span>
+        </div>
+
+    </div>
+
+</article>
+                
                 <!-- Project 3 -->
                 <article
                     class="project-slide"
@@ -369,7 +571,7 @@
                     <div class="project-content">
 
                         <div class="project-number">
-                            Project 03
+                            Project 04
                         </div>
 
                         <h2>
@@ -458,7 +660,7 @@
                 <!-- Project 4 -->
                 <article
                     class="project-slide"
-                    data-index="3"
+                    data-index="4"
                     hidden
                 >
 
