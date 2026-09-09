@@ -791,8 +791,11 @@ footer {
 }
 
 .cart-image-grid img {
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
+    height: clamp(320px, 42vw, 560px);
+    object-fit: contain;
+    padding: 0.5rem;
+    background: white;
+    border: 1px solid var(--border);
 }
 
 .cart-image-grid .cart-circuit {
