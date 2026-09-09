@@ -21,7 +21,68 @@
     <link rel="stylesheet" href="style.css?v=3">
 </head>
 
-<main class="container">
+<body>
+
+    <header class="container site-header">
+
+        <nav>
+            <ul>
+                <li>
+                    <a class="site-name" href="index.html">
+                        Selena Lin
+                    </a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Resume
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.linkedin.com/in/selena-qingyan-lin/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://github.com/selena75"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <main class="container">
 
     <section class="page-section">
 
@@ -170,3 +231,36 @@
 </section>
 
 </main>
+
+
+    <footer class="container">
+        <small>
+            © <span id="current-year"></span> Selena Lin ·
+
+            <a href="mailto:qingyanlin75@gmail.com">
+                Email
+            </a>
+
+            ·
+
+            <a
+                href="https://www.linkedin.com/in/selena-qingyan-lin/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+        </small>
+    </footer>
+
+
+    <script>
+        const year = document.getElementById("current-year");
+
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
+    </script>
+
+</body>
+</html>
