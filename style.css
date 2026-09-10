@@ -472,25 +472,33 @@ footer {
    Projects page
 ========================================= */
 
-.projects-page {
+.projects-page,
+.experience-page {
     padding-top: 1rem;
 }
 
-.projects-intro {
+.projects-intro,
+.experience-intro {
     margin: 0;
     padding: 1.5rem 0 1rem;
 }
 
-.projects-intro h1 {
+.projects-intro h1,
+.experience-intro h1 {
     margin: 0.2rem 0 0.4rem;
     font-size: clamp(2rem, 4vw, 3rem);
     letter-spacing: -0.04em;
 }
 
-.projects-intro > p:last-child {
+.projects-intro > p:last-child,
+.experience-intro > p:last-child {
     margin-bottom: 0;
     color: var(--muted);
     font-size: 0.92rem;
+}
+
+.experience-list {
+    padding-top: 1rem;
 }
 
 
@@ -967,7 +975,8 @@ footer {
 /* Mobile */
 
 @media (max-width: 700px) {
-    .projects-intro {
+    .projects-intro,
+    .experience-intro {
         padding-top: 0.5rem;
     }
 
