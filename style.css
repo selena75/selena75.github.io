@@ -405,6 +405,40 @@ footer {
 .experience-card ul{
     margin-top:1rem;
 }
+
+.csa-gallery {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(240px, 0.55fr);
+    gap: 1rem;
+    align-items: stretch;
+
+    margin-top: 1.4rem;
+}
+
+.csa-gallery figure {
+    margin: 0;
+}
+
+.csa-gallery img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    padding: 0.4rem;
+
+    object-fit: contain;
+
+    background: #f2f7f8;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.csa-gallery figcaption {
+    margin-top: 0.45rem;
+    color: #87969d;
+    font-size: 0.72rem;
+    text-align: center;
+}
+
 .page-navigation {
     display: flex;
     justify-content: center;
@@ -949,6 +983,15 @@ footer {
     .project-details-grid {
         grid-template-columns: 1fr;
         gap: 0.8rem;
+    }
+
+    .csa-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .csa-gallery img {
+        height: auto;
+        max-height: 560px;
     }
 
     .cart-image-grid {
